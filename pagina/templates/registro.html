@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>FidcliFood</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css?family=Bitter:400,700' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Header-Dark.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Login-Form-Dark.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Navigation-with-Button.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Registration-Form-with-Photo.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md border rounded-0 navigation-clean-button">
+        <div class="container"><a class="navbar-brand" href="#">ParcheU</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav me-auto"></ul><span class="navbar-text actions"> <a class="login" href="#">¿Ya estás registrado?</a><a class="btn btn-light action-button" role="button" href="{% url 'inicio' %}">Iniciar sesión</a></span>
+            </div>
+        </div>
+    </nav>
+    <section class="register-photo">
+        <div class="form-container">
+            <div class="image-holder"></div>
+            <form method="post">
+                {% csrf_token %}
+                <h2 class="text-center"><strong>Crear una cuenta</strong>.</h2>
+                {%for message in messages%}
+                    <div class="mb-3"><center><span style="color:red;">{{message}}</span></center> </div>
+                {% endfor %}
+                
+                <div class="mb-3"><input class="form-control" type="text" name="nombre" id="nombre" placeholder="Nombre" required></div>
+                <div class="mb-3"><input class="form-control" type="number" name="celular" id="celular" placeholder="Celular" required></div>
+                <div class="mb-3"><input class="form-control" type="email" name="correo" id="correo" placeholder="Correo" required></div>
+                <div class="mb-3"><input class="form-control" type="password" name="password" id="password" placeholder="Contraseña" required></div>
+                <div class="mb-3">
+                    <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox" required>Estoy deacuerdo con los terminos de uso y el reglamento</label></div>
+                </div>
+                <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Registrarse</button></div>
+            </form>
+        </div>
+    </section>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

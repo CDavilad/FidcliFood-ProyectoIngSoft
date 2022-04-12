@@ -20,6 +20,13 @@ from pagina import views as paginaViews
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', paginaViews.home),
-    path('home', paginaViews.home),
-    
+    path('home/', paginaViews.home, name = 'inicio'),
+    path('inicioApp/', paginaViews.inicioApps, name = 'inicioApp'),
+    path('about/', paginaViews.about, name = 'about'),
+    path('registro/', paginaViews.registro, name = 'registro'),
+    path('cerrar_sesion/', paginaViews.logout, name = 'cerrar_sesion'),
+    path('perfil/', paginaViews.perfil, name = 'perfil'),
+
 ]
+
+'''urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)'''

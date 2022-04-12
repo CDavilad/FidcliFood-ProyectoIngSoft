@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>FidcliFood</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css?family=Amiko&amp;display=swap' %}">
+    <link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css?family=Bitter:400,700&amp;display=swap' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Contact-Form-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Header-Dark.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Login-Form-Dark.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Navigation-with-Button.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Navigation-with-Search.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Registration-Form-with-Photo.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/untitled.css' %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-search" style="border-bottom-style: solid;">
+        <div class="container"><a class="navbar-brand" href="{% url 'inicioApp' %}">FidcliFood</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'inicioApp' %}">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'perfil' %}">Mi cuenta</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Acerca de nosotros</a></li>
+                </ul>
+                
+                <a class="btn btn-light action-button" role="button" href="{% url 'cerrar_sesion' %}" style="background: var(--bs-red);">Cerrar sesión</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="width: 700px;">
+        
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

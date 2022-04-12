@@ -1,5 +1,6 @@
 from tabnanny import verbose
 from django.db import models
+from django.forms import PasswordInput
 
 # Create your models here.
 
@@ -7,6 +8,7 @@ class Usuario(models.Model):
     nombre = models.CharField(max_length=100)
     correo = models.CharField(max_length=100, primary_key=True)
     celular = models.IntegerField()
+    password = models.CharField(max_length=100, null=False)
     class Meta:
         verbose_name = "usuario"
         verbose_name_plural = "usuarios"
