@@ -59,7 +59,8 @@ def about(request):
     return HttpResponse('<h1>Welcome to About Page</h1>')
 
 def inicioApps(request):
-    return render(request, 'inicio.html')
+    searchTerm = request.GET.get('searchProducto')
+    return render(request, 'inicio.html', {'searchTerm':searchTerm})
 
 def perfil(request):
     return HttpResponse('<h1>This is your profile</h1>')
