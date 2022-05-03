@@ -13,15 +13,32 @@ class Usuario(models.Model):
         verbose_name = "usuario"
         verbose_name_plural = "usuarios"
 
+class Tienda(models.Model):
+    nombre = models.CharField(primary_key=True,max_length=100)
+    direccion = models.CharField(max_length=100)
+    celular = models.IntegerField(null=True)
+
+class Comentario(models.Model):
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, null = False, blank = True)
+    contenido = models.CharField(max_length=500)
+    fecha = models.CharField(max_length=12, null=False)
+
 class Producto(models.Model):
-    id_producto = models.IntegerField(primary_key=True)
+    idProducto = models.IntegerField(primary_key=True)
     nombre = models.CharField(max_length=100)
-    tipo = models.CharField(max_length=100)
+    descripcion = models.CharField(max_length=2000, null=True)
     valor = models.IntegerField()
     cantidad = models.IntegerField()
+    tienda = models.ForeignKey(Tienda, on_delete=models.CASCADE, null=True, blank = True)
+    comentarios = models.ForeignKey(Comentario, on_delete=models.CASCADE, null=True, blank=True)
+
+
+
+    
+
 
 '''
-    class Tienda
+   
     class Compra
     class 
 '''
