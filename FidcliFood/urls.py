@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from pagina import views as paginaViews
 
+from django.conf.urls.static import static
+from django.conf import settings
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', paginaViews.home),
@@ -26,7 +29,9 @@ urlpatterns = [
     path('registro/', paginaViews.registro, name = 'registro'),
     path('cerrar_sesion/', paginaViews.logout, name = 'cerrar_sesion'),
     path('perfil/', paginaViews.perfil, name = 'perfil'),
+    path('tienda/<str:nombretienda>/', paginaViews.tienda, name='tienda'),
+    path('editarPerfil/', paginaViews.EditarPerfil, name='editarPerfil'),
 
 ]
 
-'''urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)'''
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
